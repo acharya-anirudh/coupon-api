@@ -18,7 +18,7 @@ module.exports.getAllCoupons = function(req,res,next) {
 }
 
 module.exports.getCouponById = function(req,res,next) {
-	Coupon.findById(req.parama.id , function(err, coupon) {
+	Coupon.findById(req.params.id , function(err, coupon) {
 		if(err) return next(err)
 		if(!coupon)
 			return res.status(404).send("No coupon with that ID");
